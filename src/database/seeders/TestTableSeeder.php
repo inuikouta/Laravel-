@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Author;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,19 +15,6 @@ class TestTableSeeder extends Seeder
      */
     public function run()
     {
-        $param = [
-            'name' => 'tony',
-        ];
-        DB::table('test')->insert($param);
-
-        $param = [
-            'name' => 'nui',
-        ];
-        DB::table('test')->insert($param);
-
-        $param = [
-            'name' => 'nuinuinuinuinuinui',
-        ];
-        DB::table('test')->insert($param);
+        Author::factory()->count(3)->create();
     }
 }

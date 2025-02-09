@@ -10,8 +10,15 @@
     <h2>ログイン画面</h2>
     <form action="/login" method="post">
         @csrf
-        <input type="email" name="email" placeholder="メール"><br>
+        <input type="email" name="email" placeholder="メール">
+        @error('email')
+        {{ $message }}
+        @enderror
+        <br>
         <input type="password" name="password" placeholder="パスワード">
+        @error('password')
+        {{ $message }}
+        @enderror
         <button>ログイン</button>
     </form>
     <a href="/register">新規登録</a>

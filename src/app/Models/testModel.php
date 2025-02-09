@@ -15,6 +15,12 @@ class testModel extends Model
     public function getDetail()
     {
         $txt = "クラスをそのまま渡します" . $this->name;
-        return $txt;
+        // return $txt;
+        return "成功";
+    }
+
+    public function dateTest()
+    {
+        return $this->belongsTo('App\Models\DateTest', 'user_id');
     }
 }

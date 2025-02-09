@@ -17,5 +17,12 @@ use App\Http\Controllers\TestController;
 Route::middleware('auth')->group(function () {
     Route::get('/', [TestController::class, 'index']);
 });
-
 Route::post('/', [TestController::class, 'post'])->middleware('test');
+
+Route::post('/sub', [TestController::class, 'sub']);
+
+Route::get('/sub', function () {
+    return view('welcome');
+});
+
+Route::get('/group', [TestController::class, 'group']);

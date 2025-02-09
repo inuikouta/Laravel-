@@ -19,11 +19,18 @@
         <h2>まだフラッシュデータがありません</h2>
     @endif
 
+    <form action="/sub" method="POST">
+        @csrf
+        <input type="text" name="title" placeholder="タイトル">
+        <input type="text" name="id" placeholder="ユーザid">
+        <input type="submit">
+    </form>
     <form action="/" method="POST">
         @csrf
         <input type="text" name="content">
         <input type="submit">
     </form>
+    <a href="/group">所属確認</a>
     <table>
         <tr>
             <th>名前</th>
